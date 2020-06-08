@@ -2,21 +2,19 @@
     <div class="row ">
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-            <form>
+            <form method="post" action="/login">
                 <div class="form-group">
                     <label for="Usuario">Usuario:</label>
-                    <input type="email" class="form-control" id="Usuario" aria-describedby="emailHelp" placeholder="Usuario">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input type="text" class="form-control" id="Usuario" name="User" placeholder="Usuario">
                 </div>
                 <div class="form-group">
                     <label for="Password">Password</label>
-                    <input type="password" class="form-control" id="Password" placeholder="Contraseña">
+                    <input type="password" class="form-control" id="Password"  name="Pass" placeholder="Contraseña">
                 </div>
                 <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
         </div>
         <div class="col-lg-4"></div>
-
     </div>
 
 </div>
