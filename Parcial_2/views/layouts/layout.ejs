@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!--BOOSTRAP CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+          integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/importer.less">
     <!--END BOOSTRAP CSS-->
     <title>Heladería Trivento</title>
-  </head>
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-danger">
-      <a class="navbar-brand" href="#"><i class="fas fa-ice-cream"></i> Trivento</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-danger">
+    <div class="container">
+        <a class="navbar-brand" href="/"><i class="fas fa-ice-cream"></i> Trivento</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <% if (!req.session.user) {%>
-          <li class="nav-item" >
-            <a class="nav-link" href="/login">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup">Sign Up</a>
-          </li>
-          <% } else { %>
-          <li class="nav-item">
-            <%- req.session.user.username%>
-          </li>
-          <% } %>
-        </ul>
-      </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <% if ( req.session.user && req.session.user.username == "Trivento") { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-chart-line fa-2x"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/orden"><i class="fas fa-clipboard-list fa-2x"></i></a>
+                    </li>
+                <% } if(req.session.user && req.session.user.username != "Trivento") { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                    </li>
+                <% } %>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <% if (!req.session.user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                    </li>
+                <% } else { %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i> <%- req.session.user.username %>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/">Log out
+                                <% req.session.user = null  %>
+                                </a>
+                            </div>
+                        </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
 
-    <%- body %>
+</nav>
 
-    <!--SCRIPTS-->
-    <script src="/dependencies/sails.io.js"></script>
-    <!--SCRIPTS END-->
-  </body>
+<%- body %>
+
+<!--SCRIPTS-->
+<script src="/dependencies/sails.io.js"></script>
+<!--SCRIPTS END-->
+</body>
 </html>
