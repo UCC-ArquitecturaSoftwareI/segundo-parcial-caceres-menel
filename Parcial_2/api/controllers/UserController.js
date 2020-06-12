@@ -24,5 +24,17 @@ module.exports = {
     }
   },
 
+  signup: async function (req,res){
+    const user = {
+      username:req.param('user'),
+      password:req.param('pass'),
+      name:req.param('name'),
+      lastname:req.param('lastname'),
+      email:req.param('mail'),
+      phoneNumber:req.param('phone')
+    };
+    await User.create(user).fetch();
+    res.redirect('/');
+  }
 };
 

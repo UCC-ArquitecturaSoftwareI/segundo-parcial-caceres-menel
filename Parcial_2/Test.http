@@ -1,4 +1,4 @@
 POST http://localhost:1337/user
 Content-Type: application/x-www-form-urlencoded
 
-username=Ange&password=987&email=ange@a.a&name=Angelo&lastname=Menel&phoneNumber=3541
+username=Trivento&password=Trivento2015&email=martin@a.a&name=Trivento&lastname=Caceres&phoneNumber=3541

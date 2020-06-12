@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
           integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/styles/importer.less">
+
     <!--END BOOSTRAP CSS-->
     <title>Heladería Trivento</title>
 </head>
@@ -46,15 +47,11 @@
                         <a class="nav-link" href="/signup">Sign Up</a>
                     </li>
                 <% } else { %>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user-circle"></i> <%- req.session.user.username %>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/">Log out
-                                <% req.session.user = null  %>
-                                </a>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> <%-req.session.user.username%></a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="/">Log out <%-req.session.user = null%></a>
                         </li>
                 <% } %>
             </ul>
