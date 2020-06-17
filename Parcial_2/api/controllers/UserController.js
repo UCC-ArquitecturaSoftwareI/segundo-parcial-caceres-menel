@@ -20,20 +20,30 @@ module.exports = {
       res.redirect('/');
     } else {
       req.session.user = null;
-      res.redirect('/login');
+      res.view('pages/login');
     }
   },
 
   signup: async function (req,res){
-    const user = {
-      username:req.param('user'),
+    let user = req.param('user');
+    if (User.findOne({username: user})){
+      //res.send('Ya existe el usuario');
+      res.redirect('/signup');
+    }
+    const users = {
+      username: user,
       password:req.param('pass'),
       name:req.param('name'),
       lastname:req.param('lastname'),
       email:req.param('mail'),
       phoneNumber:req.param('phone')
     };
-    await User.create(user).fetch();
+    await User.create(users).fetch();
+    res.redirect('/');
+  },
+
+  logout: async function(req,res){
+    req.session.user = null;
     res.redirect('/');
   }
 };
