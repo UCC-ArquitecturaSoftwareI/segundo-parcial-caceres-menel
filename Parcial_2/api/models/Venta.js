@@ -25,6 +25,11 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     client:{
       model: 'User'
+    },
+    sold: {
+      collection: 'Product',
+      via: 'ventas',
+      through: 'Prodvent'
     }
   },
 

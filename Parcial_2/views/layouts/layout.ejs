@@ -8,9 +8,9 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
           integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/styles/importer.less">
 
     <!--END BOOSTRAP CSS-->
+
     <title>Heladería Trivento</title>
 </head>
 
@@ -32,6 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/orden"><i class="fas fa-clipboard-list fa-2x"></i></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/newproduct"><i class="fab fa-dropbox fa-2x"></i></a>
+                    </li>
                 <% } if(req.session.user && req.session.user.username != "Trivento") { %>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-2x"></i></a>
@@ -47,12 +50,6 @@
                         <a class="nav-link" href="/signup">Sign Up</a>
                     </li>
                 <% } else { %>
-                      <!--  <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> <%-req.session.user.username%></a>
-                        </li>
-                        <li class="nav-item" >
-                            <a class="nav-link" href="/logout">Log out</a>
-                        </li>-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-circle"></i> <%-req.session.user.username%>
@@ -65,7 +62,6 @@
             </ul>
         </div>
     </div>
-
 </nav>
 
 <%- body %>

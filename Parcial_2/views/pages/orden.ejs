@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row ">
         <div class="col-lg-6">
-            <form>
+            <form method="post" >
                 <div class="form-group">
                     <label for="Envase">Envase:</label>
-                    <select class="form-control" id="Envase">
-                        <option name="1kilo">1 Kilo</option>
-                        <option name="1/2kilo">1/2 Kilo</option>
-                        <option name="1/4kilo">1/4 kilo</option>
-                        <option name="tacita">Tacita</option>
-                        <option name="cucurucho1">1 Bocha</option>
-                        <option name="cucurucho2">2 Bochas</option>
+                    <select class="form-control" id="Envase" name="size">
+                        <option value="1 Kilo">1 Kilo</option>
+                        <option value="1/2 Kilo">1/2 Kilo</option>
+                        <option value="1/4 Kilo">1/4 kilo</option>
+                        <option value="Tacita">Tacita</option>
+                        <option value="1 Bocha">1 Bocha</option>
+                        <option value="2 Bochas">2 Bochas</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -19,11 +19,11 @@
 
                 <div class="form-group">
                     <label for="Monto">Monto Total:</label>
-                    <input class="form-control" type="number" placeholder="Monto Total" value="500" readonly>
+                    <input class="form-control" id="PriceOnly" type="number" name="Price" placeholder="Monto Total" value="0" readonly>
                 </div>
 
-                <button type="submit" class="btn btn-outline-success">Finish</button>
-                <a href="#" class="btn btn-outline-primary"><i class="fas fa-plus"></i></a>
+                <button type="submit" class="btn btn-outline-success" formaction="/orden">Finish</button>
+                <button type="submit" class="btn btn-outline-primary" formaction="/addorden"><i class="fas fa-plus"></i></button>
 
             </form>
         </div>

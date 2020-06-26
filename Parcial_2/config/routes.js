@@ -29,9 +29,13 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
 
   //EMPLEADO
-  '/orden': {view: 'pages/orden'},
+  'get /orden': {view: 'pages/orden'},
+  'post /orden': 'VentaController.sold',
+  //'get /addorden': {view: 'pages/orden'},
+  'post /addorden': 'ProductController.addorden',
   '/ventas': {view:'pages/ventas'},
-
+  'get /newproduct': {view: 'pages/newproduct'},
+  'post /newproduct': 'ProductController.newproduct',
 
   /***************************************************************************
   *                                                                          *

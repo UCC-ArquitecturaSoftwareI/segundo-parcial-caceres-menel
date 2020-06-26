@@ -1,4 +1,18 @@
 POST http://localhost:1337/user
 Content-Type: application/x-www-form-urlencoded
 
-username=Trivento&password=Trivento2015&email=martin@a.a&name=Trivento&lastname=Caceres&phoneNumber=3541
+username=Trivento&password=Trivento2020&email=martin@a.a&name=Trivento&lastname=Caceres&phoneNumber=3541
+
+###
+
+POST http://localhost:1337/product
+Content-Type: application/x-www-form-urlencoded
+
+name=1 Kilo&cost=500&stock=1000
+
+###
+
+POST http://localhost:1337/venta
+Content-Type: application/x-www-form-urlencoded
+
+money=600&sold=1
