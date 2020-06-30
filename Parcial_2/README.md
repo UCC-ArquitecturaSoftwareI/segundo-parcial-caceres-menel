@@ -1,8 +1,8 @@
-#Gestor de Heladería
+# Gestor de Heladería
 
-##Integrantes
+## Integrantes
 
 **Caceres, Martín** - **Menel, Angelo**
 
-###Descripción
+### Descripción
 
