@@ -17,6 +17,12 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  ProductController: {
+    '*': 'isLoggedIn'
+  },
+  VentaController: {
+    '*': 'isLoggedIn'
+  }
+
 
 };
