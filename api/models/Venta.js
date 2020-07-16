@@ -26,7 +26,7 @@ module.exports = {
     client:{
       model: 'User'
     },
-    sold: {
+    sell: {
       collection: 'Product',
       via: 'ventas',
       through: 'Prodvent'

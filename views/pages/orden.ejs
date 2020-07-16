@@ -1,7 +1,9 @@
 <div class="container">
-    <div class="row ">
-        <div class="col-lg-6">
-            <form method="post" >
+
+    <form method="post">
+        <div class="row ">
+            <div class="col-lg-6">
+
                 <div class="form-group">
                     <label for="Envase">Envase:</label>
                     <select class="form-control" id="Envase" name="size">
@@ -19,19 +21,25 @@
 
                 <div class="form-group">
                     <label for="Monto">Monto Total:</label>
-                    <input class="form-control" id="PriceOnly" type="number" name="Price" placeholder="Monto Total" value="<%-amount%>" readonly>
+                    <input class="form-control" id="Monto" type="number" name="Price" placeholder="Monto Total"
+                           value="<%- amount %>" readonly>
                 </div>
 
-                <button type="submit" class="btn btn-outline-success" formaction="/orden">Finish</button>
-                <button type="submit" class="btn btn-outline-primary" formaction="/addorden"><i class="fas fa-plus"></i></button>
+                <button type="submit" class="btn btn-outline-success" formaction="/sold">Finish</button>
+                <button type="submit" class="btn btn-outline-primary" formaction="/addorden"><i class="fas fa-plus"></i>
+                </button>
 
-            </form>
+            </div>
+            <div class="col-lg-1">
+                <label for="cantidad">Cantidad:</label>
+                <input class="form-control" id="cantidad" type="number" name="plus" placeholder="Cantidad"
+                       value="<%- sum %>" readonly>
+            </div>
+            <div class="col-lg-5"></div>
         </div>
-        <div class="col-lg-3">
-        </div>
-        <div class="col-lg-3">
-        </div>
-    </div>
+    </form>
+
+
 </div>
 
 

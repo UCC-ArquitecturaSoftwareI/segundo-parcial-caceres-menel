@@ -14,20 +14,13 @@ module.exports = {
     let number = req.param("Price");
     let amount = Number(number);
     amount += found.cost;
+    let cant = req.param("plus");
+    cant++;
 
-    res.view('pages/orden',{amount:amount});
+    res.view('pages/orden', {amount: amount, sum: cant});
   },
 
   newproduct: async function (req, res) {
-    let found = await Product.findOne({     /*Desde la linea 26 a la 35 , deberia cambiar los valores de los */
-      name: req.param("product"),           /* atributos, en cambio, esto no hace nada.*/
-    });
-
-    if (found) {
-      await Product.updateOne({id:found.id}).set({
-                                cost:req.param("price"),
-                                stock:req.param("stock")});
-    } else {
       const prod = {
         name: req.param("product"),
         cost: req.param("price"),
@@ -35,9 +28,13 @@ module.exports = {
       }
 
       await Product.create(prod).fetch();
-    }
+      res.redirect('/newproduct');
+  },
 
-    res.redirect('/newproduct');
+  products: async function(req,res){
+    let product = await Product.find({});
+
+    res.view('pages/chproducts',{products:product});
   }
 };
 

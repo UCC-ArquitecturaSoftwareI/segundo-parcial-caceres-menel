@@ -11,9 +11,15 @@ module.exports = {
     const sale = {
       money: req.param("Price"),
       client: req.session.user.id,
+      /*sold: {
+        price: req.param("Price"),
+        amount:req.sum,
+        prod: req.product.id,
+        sell: req.venta.id
+      }*/
     }
     await Venta.create(sale).fetch();
-    res.redirect('/orden');
+    res.view('pages/orden',{amount:0, sum:0});
   }
 
 };
