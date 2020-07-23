@@ -7,12 +7,14 @@
                 <div class="form-group">
                     <label for="Envase">Envase:</label>
                     <select class="form-control" id="Envase" name="size">
-                        <option value="1 Kilo">1 Kilo</option>
-                        <option value="1/2 Kilo">1/2 Kilo</option>
-                        <option value="1/4 Kilo">1/4 kilo</option>
-                        <option value="Tacita">Tacita</option>
-                        <option value="1 Bocha">1 Bocha</option>
-                        <option value="2 Bochas">2 Bochas</option>
+                        <% for (let prod of products){ %>
+                            <option><%- prod.name %></option>
+                        <% } %>
+                        <!-- <option value="1 Kilo">1 Kilo</option>
+                         <option value="1/2 Kilo">1/2 Kilo</option>
+                         <option value="1/4 Kilo">1/4 kilo</option>
+                         <option value="Tacita">Tacita</option>
+                         <option value="Cucurucho">Cucurucho</option>-->
                     </select>
                 </div>
                 <div class="form-group">
@@ -25,10 +27,16 @@
                            value="<%- amount %>" readonly>
                 </div>
 
-                <button type="submit" class="btn btn-outline-success" formaction="/sold">Finish</button>
-                <button type="submit" class="btn btn-outline-primary" formaction="/addorden"><i class="fas fa-plus"></i>
+                <button type="submit" class="btn btn-outline-success"
+                        formaction="/sold/<%- arrprod %>/<%- sum %>">
+                    Finish
                 </button>
-
+                <button type="submit" class="btn btn-outline-primary"
+                        formaction="/addorden/<%- arrprod %>"><i
+                            class="fas fa-plus"></i>
+                </button>
+                <button type="submit" class="btn btn-outline-danger" formaction="/delete/<%- arrprod %>"><i
+                            class="fas fa-trash-alt"></i></button>
             </div>
             <div class="col-lg-1">
                 <label for="cantidad">Cantidad:</label>

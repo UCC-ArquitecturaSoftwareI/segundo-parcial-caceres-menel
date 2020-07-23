@@ -1,15 +1,24 @@
 <div class="container-fluid">
-
-    <form method="post" action="/">
+    <form method="post">
         <h2 class="text-md-center">Productos: </h2>
         <% for(let prod of products){ %>
-            <div class="row">
+            <% if (prod.stock != 0) { %>
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6 form-group" style="margin-top: 0.2rem">
+                        <button type="submit" class="btn btn-outline-danger btn-lg" id="Producto"
+                                formaction="/changeForm/<%- prod.id %>"> <%- prod.name %></button>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            <% } else { %>
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6 form-group" style="margin-top: 0.2rem">
-                    <button type="submit" class="btn btn-outline-danger btn-lg" id="Producto"> <%- prod.name %></button>
+                    <button type="submit" class="btn btn-outline-danger btn-lg" id="Producto"
+                            formaction="/changeForm/<%- prod.id %>"> <%- prod.name %></button>
                 </div>
                 <div class="col-lg-3"></div>
-            </div>
+            <% } %>
         <% } %>
     </form>
     <div class="row">

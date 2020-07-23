@@ -12,9 +12,9 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    name:{type:'string', required: true},
-    cost:{type:'number', required: true},
-    stock:{type:'number', required:true},
+    name: {type: 'string', required: true},
+    cost: {type: 'number', required: true},
+    stock: {type: 'number', required: true},
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -26,8 +26,8 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     prod: {
       collection: 'Venta',
-      via: 'producto',
-      through: 'Prodvent'
+      via: 'envase',
+      through: 'Prodvent',
     }
   },
 

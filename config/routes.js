@@ -29,14 +29,21 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
 
   //EMPLEADO
-  'get /orden': {view: 'pages/orden',locals:{amount:0,sum:0}},
-  'post /sold': 'VentaController.sold',
-  'post /addorden': 'ProductController.addorden',
+  '/orden':'ProductController.orden',
+  'post /sold/:arrprod/:sum': 'VentaController.sold',
   '/ventas': {view:'pages/ventas'},
-  //'get /newproduct': {view: 'pages/newproduct'},
+
+
+  //PRODUCTOS
+  'post /produventa/:sale/:sum/:amount/:arrprod':'ProdventController.produventa',
   '/chproducts': 'ProductController.products',
+  'post /addorden/:arrprod': 'ProductController.addorden',
+  'get /newproduct': {view:'pages/newproduct'},
   'post /newproduct': 'ProductController.newproduct',
-  'get /newproduct': {view:'pages/newproduct'}
+  'post /changeForm/:id':'ProductController.changeForm',
+  'get /change': {view:'pages/changeprod'},
+  'post /change':'ProductController.change',
+  'post /delete/:arrprod': 'ProductController.delete',
 
   /***************************************************************************
   *                                                                          *

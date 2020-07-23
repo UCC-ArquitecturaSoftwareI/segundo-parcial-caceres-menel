@@ -24,12 +24,13 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     client:{
-      model: 'User'
+      model: 'User',
+      required: true
     },
     sell: {
       collection: 'Product',
       via: 'ventas',
-      through: 'Prodvent'
+      through: 'Prodvent',
     }
   },
 

@@ -24,25 +24,29 @@ module.exports = {
     }
   },
 
-  signup: async function (req,res){
+  signup: async function (req, res) {
     let user = req.param('user');
-    if (User.findOne({username: user})){
+    if (await User.findOne({username: user})) {
       //res.send('Ya existe el usuario');
       res.redirect('/signup');
+    } else {
+      const users = {
+        username: user,
+        password: req.param('pass'),
+        name: req.param('name'),
+        lastname: req.param('lastname'),
+        email: req.param('mail'),
+        phoneNumber: req.param('phone'),
+        street: req.param('Street'),
+        streetnum: req.param('Streetnum'),
+        neighborhood: req.param('Neighborhood')
+      };
+      await User.create(users).fetch();
+      res.redirect('/');
     }
-    const users = {
-      username: user,
-      password:req.param('pass'),
-      name:req.param('name'),
-      lastname:req.param('lastname'),
-      email:req.param('mail'),
-      phoneNumber:req.param('phone')
-    };
-    await User.create(users).fetch();
-    res.redirect('/');
   },
 
-  logout: async function(req,res){
+  logout: async function (req, res) {
     req.session.user = null;
     res.redirect('/');
   }

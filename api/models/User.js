@@ -18,6 +18,10 @@ module.exports = {
     name: {type: 'string', required: true},
     lastname: {type: 'string', required: true},
     phoneNumber: {type: 'number', required: true},
+    street:{type: 'string',required: true},
+    streetnum:{type:'number',required:true},
+    neighborhood:{type:'string',required: true},
+
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝

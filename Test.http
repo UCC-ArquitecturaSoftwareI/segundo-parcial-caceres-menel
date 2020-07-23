@@ -15,4 +15,4 @@ name=1 Kilo&cost=500&stock=1000
 POST http://localhost:1337/venta
 Content-Type: application/x-www-form-urlencoded
 
-money=600&sold=1
+money=600&client=5
