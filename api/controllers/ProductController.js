@@ -27,7 +27,6 @@ module.exports = {
     }
 
     arrprod.push(found.id);
-    // console.log(arrprod);
 
     let amount = Number(req.param("Price"));
     amount += found.cost;
@@ -121,6 +120,10 @@ module.exports = {
     res.view('pages/changeprod', {product: product});
   },
 
+  searchprod: async function (req, res) {
+    let products = await Product.find({});
+    res.view('pages/search', {type: products,typesearch: 'Productos'});
+  }
 
 };
 

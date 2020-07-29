@@ -49,6 +49,40 @@ module.exports = {
   logout: async function (req, res) {
     req.session.user = null;
     res.redirect('/');
+  },
+
+  clients: async function (req, res) {
+
+    let client = await User.find({});
+    let sales = [];
+    let amount = [0];
+    let i = 0;
+    for (let c of client) {
+      sales = await Venta.find({
+        where: {client: c.id}
+      });
+      for (let s of sales) {
+        amount[i] += s.money;
+      }
+      if (amount[i] == null) amount[i] = 0;
+      i++;
+    }
+
+
+    res.view('pages/search', {type: client, typesearch: 'Usuarios', sell: amount});
+  },
+
+  searchtype: async function (req, res) {
+    let typesearch = req.param('typesearch');
+    if (typesearch === 'Ventas') {
+      res.redirect('/typesale');
+    }
+    if (typesearch === 'Productos') {
+      res.redirect('/typeproduct');
+    } else {
+      res.redirect('/typeuser');
+    }
   }
+
 };
 

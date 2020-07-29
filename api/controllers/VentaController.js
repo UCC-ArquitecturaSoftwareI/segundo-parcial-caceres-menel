@@ -26,6 +26,15 @@ module.exports = {
 
     res.view('pages/Responsesell', {sale: sale.id, sum: sum, amount: amount, arrprod: arrprod});
 
+  },
+  searchsale: async function (req, res) {
+
+    let sales = await Venta.find({});
+    for (let s of sales) {
+      s.populate('client');
+    }
+
+    res.view('pages/search', {type: sales, typesearch: 'Ventas'});
   }
 
 };

@@ -1,0 +1,21 @@
+<table class="table table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for (let i = 0 ; i < type.length ;i++){ %>
+        <tr>
+            <th scope="row"><%- type[i].id %></th>
+            <td><%- type[i].name %></td>
+            <td><%- type[i].cost %></td>
+            <td><%- type[i].stock %></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+

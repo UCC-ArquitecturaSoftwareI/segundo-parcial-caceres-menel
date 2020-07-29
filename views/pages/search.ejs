@@ -1,0 +1,26 @@
+<form method="post" action="/search">
+    <div class="row ">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label for="SEARCH" style="margin-top: 2px;margin-left: 20px">Buscar por:</label>
+                <select class="form-control" id="SEARCH" name="typesearch" style="margin-left: 20px">
+                    <option value="Ventas">Ventas</option>
+                    <option value="Productos">Productos</option>
+                    <option value="Usuarios">Usuarios</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <button type="submit" class="btn btn-outline-success" style="margin-top: 2rem">Submit</button>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</form>
+<% if(typesearch === 'Usuarios'){ %>
+    <%- partial('../Partials/searchusers.ejs') %>
+<% } if (typesearch === 'Ventas'){ %>
+    <%- partial('../Partials/searchventas.ejs') %>
+<% } if (typesearch === 'Productos'){ %>
+    <%- partial('../Partials/searchproduct.ejs') %>
+<% } %>
+

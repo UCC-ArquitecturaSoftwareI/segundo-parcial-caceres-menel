@@ -22,6 +22,9 @@ module.exports.policies = {
   },
   VentaController: {
     '*': 'isLoggedIn'
+  },
+  UserController: {
+    '/ventas': 'isLoggedIn'
   }
 
 
