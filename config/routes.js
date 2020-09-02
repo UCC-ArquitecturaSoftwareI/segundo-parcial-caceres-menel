@@ -49,6 +49,10 @@ module.exports.routes = {
   'post /change': 'ProductController.change',
   'post /delete/:arrprod': 'ProductController.delete',
 
+  //FLAVORS
+  'get /flavors': {view: 'pages/newflavor'},
+  'post /flavors':'FlavorsController.newflavor'
+
   /***************************************************************************
    *                                                                          *
    * More custom routes here...                                               *

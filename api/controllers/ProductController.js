@@ -85,14 +85,18 @@ module.exports = {
   },
 
   newproduct: async function (req, res) {
-    const prod = {
-      name: req.param("product"),
-      cost: req.param("price"),
-      stock: req.param("stock")
-    }
+    if(await Product.findOne({name: req.param("product")})){
+      res.redirect('/chproducts');
+    }else{
+      const prod = {
+        name: req.param("product"),
+        cost: req.param("price"),
+        stock: req.param("stock")
+      }
 
-    await Product.create(prod).fetch();
-    res.redirect('/chproducts');
+      await Product.create(prod).fetch();
+      res.redirect('/chproducts');
+    }
   },
 
   products: async function (req, res) {

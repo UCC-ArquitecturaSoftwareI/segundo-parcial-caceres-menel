@@ -2,7 +2,7 @@
     <form method="post">
         <h2 class="text-md-center">Productos: </h2>
         <% for(let prod of products){ %>
-            <% if (prod.stock != 0) { %>
+            <% if (prod.stock !== 0) { %>
                 <div class="row">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6 form-group" style="margin-top: 0.2rem">
@@ -22,12 +22,18 @@
         <% } %>
     </form>
     <div class="row">
-        <div class="col-lg-3"></div>
+        <div class="col-lg-3"> </div>
         <div class="col-lg-6">
             <a class="btn btn-info" href="/newproduct">New Product</a>
+            <a class="btn btn-success" href="/flavors">New Flavors</a>
         </div>
-        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+
+        </div>
     </div>
+
+
+
 </div>
 
 

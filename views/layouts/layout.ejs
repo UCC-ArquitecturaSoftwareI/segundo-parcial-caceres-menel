@@ -25,7 +25,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <% if ( req.session.user && req.session.user.username == "Trivento2010") { %>
+                <% if ( req.session.user && req.session.user.username === "Trivento2010") { %>
                     <li class="nav-item">
                         <a class="nav-link" href="/search"><i class="fas fa-chart-line fa-2x"></i></a>
                     </li>
@@ -35,7 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/chproducts"><i class="fab fa-dropbox fa-2x"></i></a>
                     </li>
-                <% } if(req.session.user && req.session.user.username != "Trivento2010") { %>
+                <% } if(req.session.user && req.session.user.username !== "Trivento2010") { %>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-2x"></i></a>
                     </li>

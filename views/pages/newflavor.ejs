@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form method="post" action="/flavors">
+                <div class="form-group">
+                    <label for="Product">Sabor:</label>
+                    <input type="text" class="form-control" id="Product" name="sabor" placeholder="Sabor">
+                </div>
+                <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="Alcohol" id="Alcoholic" name="isAlcohol">
+                    <label for="Alcoholic">Es alcohol</label>
+                    <small>Clickear si lo es!</small>
+
+
+                    <!--<input type="number" class="form-control" id="Cost" name="price" placeholder="Precio del producto" min="0">-->
+                </div>
+                <div class="form-group">
+                    <label for="Stock">Kilos:</label>
+                    <input type="number" class="form-control" id="Stock" name="stock" placeholder="Kilos hechos" min="0">
+                </div>
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

@@ -6,7 +6,21 @@
  */
 
 module.exports = {
-  
+
+  newflavor: async function(req,res){
+    if(await Flavors.findOne({name: req.param("sabor")})){
+      res.redirect('/flavors');
+    }else{
+      const flavor = {
+        name: req.param("sabor"),
+        isAlcohol: req.param("isAlcohol"),
+        kilos: req.param("stock")
+      }
+      await Flavors.create(flavor).fetch();
+      res.redirect('/flavors');
+    }
+
+  }
 
 };
 
